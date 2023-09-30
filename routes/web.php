@@ -27,7 +27,7 @@ Route::get("/register", function()
     {
         return redirect()->to("/stranica");
     }
-    
-})
+
+});
 
 
