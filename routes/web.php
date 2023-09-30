@@ -14,9 +14,9 @@ use App\Http\Controllers\KorisnikController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('welcome');
-});
+})->name("home");
 
 Route::get("/register", [KorisnikController::class, "prikaziRegistraciju"])->name("register");
 Route::post("/register",  [KorisnikController::class, "register"]);

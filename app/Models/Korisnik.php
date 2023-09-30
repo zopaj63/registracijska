@@ -9,7 +9,7 @@ class Korisnik extends Model
 {
     use HasFactory;
     protected $fillable=[
-        "neme",
+        "name",
         "email",
         "password"
     ];
