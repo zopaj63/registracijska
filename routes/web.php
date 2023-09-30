@@ -21,4 +21,13 @@ Route::get('/home', function () {
 Route::get("/register", [KorisnikController::class, "prikaziRegistraciju"])->name("register");
 Route::post("/register",  [KorisnikController::class, "register"]);
 
+Route::get("/register", function()
+{
+    if (auth()->check())
+    {
+        return redirect()->to("/stranica");
+    }
+    
+})
+
 

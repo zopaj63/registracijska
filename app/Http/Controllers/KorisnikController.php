@@ -35,12 +35,13 @@ class KorisnikController extends Controller
             // upis u bazu
             try
             {
-                Korisnik::create([
+                $user=Korisnik::create([
                     "name"=>$request->name,
                     "email"=>$request->email,
                     "password"=>Hash::make($request->password)
                 ]);
                 return redirect()->route("home")->with("success", "Registracija uspješna!");
+                auth()->login($user);
             }
             catch(\Exception $e)
             {
