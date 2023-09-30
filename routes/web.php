@@ -18,16 +18,18 @@ Route::get('/home', function () {
     return view('welcome');
 })->name("home");
 
+Route::resource("korisniks", KorisnikController::class);
+
 Route::get("/register", [KorisnikController::class, "prikaziRegistraciju"])->name("register");
 Route::post("/register",  [KorisnikController::class, "register"]);
 
-Route::get("/register", function()
-{
+/*
+Route::get("/register", function() {
     if (auth()->check())
     {
         return redirect()->to("/stranica");
     }
 
+
 });
-
-
+*/

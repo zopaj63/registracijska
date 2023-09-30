@@ -16,6 +16,13 @@ class KorisnikController extends Controller
         return view("register");
     }
 
+    // ispis korisnika
+    public function index()
+    {
+        $korisniks=Korisnik::all();
+        return view("index", compact("korisniks"));
+    }
+
     // obrada unosa i upis u bazu
     public function register( Request $request)
     {
@@ -40,18 +47,16 @@ class KorisnikController extends Controller
                     "email"=>$request->email,
                     "password"=>Hash::make($request->password)
                 ]);
+                
+                //auth()->login($user);
+
                 return redirect()->route("home")->with("success", "Registracija uspješna!");
-                auth()->login($user);
             }
+
             catch(\Exception $e)
             {
-                return redirect()->route("home")->with("error", "Pogreška pri registraciji");
+                return redirect()->route("home")->with("error", "Pogreška pri registraciji!");
             }
-
-
-            
-
-
 
     }
 
