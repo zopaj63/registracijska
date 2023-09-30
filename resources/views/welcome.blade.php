@@ -1,2 +1,7 @@
 <h1>Welcome blade</h1>
-<h2>{{session("success")}}</h2>
+@if(session("succes"))
+    {{session("succes")}}
+@elseif(session("error"))
+    {{session("error")}}
+@endif
+
