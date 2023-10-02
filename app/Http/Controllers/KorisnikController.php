@@ -9,18 +9,17 @@ use Illuminate\Support\Facades\Validator;
 
 class KorisnikController extends Controller
 {
-    
-    // forma za unos
-    public function prikaziRegistraciju()
-    {
-        return view("register");
-    }
-
     // ispis korisnika
     public function index()
     {
         $korisniks=Korisnik::all();
         return view("index", compact("korisniks"));
+    }
+
+    // forma za unos
+    public function prikaziRegistraciju()
+    {
+        return view("register");
     }
 
     // obrada unosa i upis u bazu

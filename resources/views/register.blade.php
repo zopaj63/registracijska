@@ -29,5 +29,9 @@
         <p>{{session("success")}}</p>
     @endif
 
+    <br><br>
+    <!--link na index-->
+    <a href="/korisniks">Popis registriranih korisnika</a>
+
 </body>
 </html>
